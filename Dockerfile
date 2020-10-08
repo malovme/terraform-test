@@ -20,4 +20,4 @@ FROM hashicorp/terraform:${TF_VERSION}
 
 COPY --from=golang /go/bin/terraspec /usr/local/bin/terraspec
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/bin/ash"]
