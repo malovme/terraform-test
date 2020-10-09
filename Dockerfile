@@ -16,8 +16,8 @@ RUN cd /go/src && git clone https://github.com/acquia/terraspec.git \
 
 # Use terraform image and copy terraspec to it
 
-FROM hashicorp/terraform:${TF_VERSION}
+FROM hashicorp/terraform:${TF_VERSION} as terraform
+FROM alpine:latest
 
 COPY --from=golang /go/bin/terraspec /usr/local/bin/terraspec
-
-ENTRYPOINT ["/bin/ash"]
+COPY --from=terraform /bin/terraform /bin/terraform
