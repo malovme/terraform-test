@@ -2,6 +2,7 @@
 Docker image for terraform code testing and static analysis
 
 ```
-docker build -t malovme/terraform-test:0.13.2 .
-docker push malovme/terraform-test:0.13.2
+TAG=0.13.5
+docker build -t malovme/terraform-test:$TAG .
+docker push malovme/terraform-test:$TAG
 ```
