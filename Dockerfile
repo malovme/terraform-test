@@ -1,4 +1,4 @@
-ARG TF_VERSION=0.13.5
+ARG TF_VERSION=0.13.2
 
 # Build terraspec
 
@@ -6,7 +6,7 @@ ARG GO_VERSION=1.14
 
 FROM golang:${GO_VERSION}-alpine AS golang
 
-ARG TERRASPEC_VERSION=0.6.0
+ARG TERRASPEC_VERSION=0.5.1
 
 RUN apk update && apk add --no-cache git
 RUN cd /go/src && git clone https://github.com/acquia/terraspec.git \
